@@ -1,0 +1,7 @@
+{
+  "name": "AplikaciaMaturita",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

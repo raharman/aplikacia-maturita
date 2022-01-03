@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "AplikaciaMaturita",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
