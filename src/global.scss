@@ -24,3 +24,27 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@import 'swiper/css/effect-cards';
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+ion-tab-bar{
+    --border: none;
+}
+
+ion-title{
+    margin-top: 4px;
+    text-align: center;
+}
+
+ion-toolbar{
+    --background: #4a7a96;
+    color: #fff;
+    text-align: center;
+}
+
+ion-card{
+    --background: #4a7a96;
+    color: #fff;
+}
