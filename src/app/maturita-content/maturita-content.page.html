@@ -1,9 +1,30 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>maturita-content</ion-title>
+    <ion-back-button defaultHref="/home" slot="start" text=""></ion-back-button>
+    <ion-title size="large">Literatúra</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <ion-card-header>
+      <ion-row>
+        <ion-col>
+          <ion-card-title>
+            1. maturitné zadanie
+          </ion-card-title>
+        </ion-col>
+        <ion-col class="ion-text-end" size="2">
+          <ion-icon name="open-outline" (click)="showModal()"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-subtitle>Epická poézia</ion-card-subtitle>
+      <ion-card-subtitle>Sylabický veršový systém</ion-card-subtitle>
+      <ion-card-subtitle>Hugolín Gavlovič</ion-card-subtitle>
+      <ion-card-subtitle>Romatizmus v slovenskej literatúre</ion-card-subtitle>
+      <ion-card-subtitle>Presná citácia</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

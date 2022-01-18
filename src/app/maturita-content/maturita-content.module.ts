@@ -15,6 +15,7 @@ import { MaturitaContentPage } from './maturita-content.page';
     IonicModule,
     MaturitaContentPageRoutingModule
   ],
-  declarations: [MaturitaContentPage]
+  declarations: [MaturitaContentPage],
+  entryComponents: [MaturitaContentPage]
 })
 export class MaturitaContentPageModule {}
