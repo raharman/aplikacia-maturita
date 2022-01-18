@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'maturita-content',
     loadChildren: () => import('./maturita-content/maturita-content.module').then( m => m.MaturitaContentPageModule)
   },
+  {
+    path: 'maturita-content2',
+    loadChildren: () => import('./maturita-content2/maturita-content2.module').then( m => m.MaturitaContent2PageModule)
+  },
 
 ];
 
