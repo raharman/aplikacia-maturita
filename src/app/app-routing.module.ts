@@ -10,7 +10,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'maturita-content',
+    loadChildren: () => import('./maturita-content/maturita-content.module').then( m => m.MaturitaContentPageModule)
   },
+
 ];
 
 @NgModule({
