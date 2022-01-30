@@ -10,6 +10,14 @@ export class TopicModalComponent {
 
   constructor(private modalCtrl: ModalController) { }
 
+  async showModal(){
+    const modal = await this.modalCtrl.create({
+      component: TopicModalComponent
+    });
+
+    await modal.present();
+  }
+
   dismissModal() {
     this.modalCtrl.dismiss();
   }

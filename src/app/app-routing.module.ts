@@ -18,9 +18,10 @@ const routes: Routes = [
   {
     path: 'maturita-content2',
     loadChildren: () => import('./maturita-content2/maturita-content2.module').then( m => m.MaturitaContent2PageModule)
-  },
-
-
+  },  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthPageModule)
+  }
 
 ];
 

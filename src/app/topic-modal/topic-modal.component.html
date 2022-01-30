@@ -1,13 +1,82 @@
 <ion-header>
   <ion-toolbar>
-    <ion-back-button (click)="dismissModal()" slot="end" text=""></ion-back-button>
-    <!-- 
-    <ion-buttons slot="start">
-      <ion-button (click)="dismissModal()">
-        <ion-icon name="chevron-back-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title size="large">1. maturitná téma</ion-title>
-    -->
+    <ion-icon (click)="dismissModal()" slot="start" name="chevron-back-outline" size="large"></ion-icon>
+    <ion-title size="large">Zadanie</ion-title>
   </ion-toolbar>
 </ion-header>
+
+<ion-content>
+  <div class="event-slider title-slider">
+    <ion-slides [options]="{ slidesPerView: 'auto', zoom:false, grabCursor: true}">
+      <ion-slide (click)="showModal()">
+        <ion-col class="ion-text-left">
+          <ion-card>
+            <ion-card-header class="ion-no-padding">
+              <img src="https://i.ibb.co/t3z8cyH/logo-maturita.png" alt="logo">
+            </ion-card-header>
+
+            <ion-card-content class="farba">
+              <h2 class="eventname">Epická poézia</h2>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card>
+            <ion-card-header class="ion-no-padding">
+              <img src="https://i.ibb.co/t3z8cyH/logo-maturita.png" alt="logo">
+            </ion-card-header>
+
+            <ion-card-content class="farba">
+              <h2 class="eventname">Sylabický veršový systém</h2>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card>
+            <ion-card-header class="ion-no-padding">
+              <img src="https://i.ibb.co/t3z8cyH/logo-maturita.png" alt="logo">
+            </ion-card-header>
+
+            <ion-card-content class="farba">
+              <h2 class="eventname">Hugolín Gavlovič</h2>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card>
+            <ion-card-header class="ion-no-padding">
+              <img src="https://i.ibb.co/t3z8cyH/logo-maturita.png" alt="logo">
+            </ion-card-header>
+
+            <ion-card-content class="farba">
+              <h2 class="eventname">Romantizmus v sk. lit.</h2>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card>
+            <ion-card-header class="ion-no-padding">
+              <img src="https://i.ibb.co/t3z8cyH/logo-maturita.png" alt="logo">
+            </ion-card-header>
+
+            <ion-card-content class="farba">
+              <h2 class="eventname">Presná citácia</h2>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>
