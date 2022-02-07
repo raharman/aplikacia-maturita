@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AlertController, LoadingController, ToastController } from '@ionic/angular';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +11,53 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterPage implements OnInit {
 
-  constructor() { }
+  
+  /** */
+  registerForm: FormGroup;
+  
+  constructor(private fb: FormBuilder,
+    private auth: AuthService,
+    private alertCtrl: AlertController,
+    private toastCtrl: ToastController,
+    private router: Router,
+    private loadingCtrl: LoadingController) { }
 
   ngOnInit() {
+  this.registerForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(6)]],
+    first_name: ['', Validators.required],
+    last_name: ['', Validators.required]
+  });
   }
+  
+  async register(){
+    let loading = await this.loadingCtrl.create({
+      message: 'Loading...'
+    });
+
+    await loading.present();
+
+    this.auth.signUp(this.registerForm.value).then(async res => {
+      loading.dismiss();
+
+      let toast = await this.toastCtrl.create({
+        duration: 3000,
+        message: 'Successfully created new Account!'
+      });
+      toast.present();
+
+      this.router.navigateByUrl('/login');
+    }, async err => {
+      loading.dismiss();
+      let alert = await this.alertCtrl.create({
+        header: 'Error',
+        message: err.message,
+        buttons: ['OK']
+      });
+      alert.present();
+    });
+  }
+  
 
 }
