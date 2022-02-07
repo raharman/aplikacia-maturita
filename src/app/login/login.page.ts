@@ -58,4 +58,48 @@ export class LoginPage implements OnInit {
     );
   }
 
+  async openReset() {
+    let inputAlert = await this.alertCtrl.create({
+      header: 'Reset Password',
+      inputs: [
+        {
+          name: 'email',
+          placeholder: 'Email'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        },
+        {
+          text: 'Reset',
+          handler: data => {
+            this.resetPw(data.email);
+          }
+        }
+      ]
+    });
+    inputAlert.present();
+  }
+  
+  resetPw(email) {
+    this.auth.resetPw(email).then(
+      async res => {
+        let toast = await this.toastCtrl.create({
+          duration: 3000,
+          message: 'Success! Check your Emails for more information.'
+        });
+        toast.present();
+      },
+      async err => {
+        let alert = await this.alertCtrl.create({
+          header: 'Error',
+          message: err.message,
+          buttons: ['OK']
+        });
+        alert.present();
+      }
+    );
+}
 }
