@@ -50,5 +50,9 @@ export class AuthService {
       })
     )
   }
+
+  resetPw(email) {
+    return this.afAuth.sendPasswordResetEmail(email);
+  }
 }
  

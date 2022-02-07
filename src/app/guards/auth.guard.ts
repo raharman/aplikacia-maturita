@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
     return this.auth.user.pipe(
       take(1),
       map(user =>{
-        console.log('user in guard: ', user);
+        /* console.log('user in guard: ', user); */
         if(!user){
           this.router.navigateByUrl('/register');
           return false;
