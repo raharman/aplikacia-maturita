@@ -54,6 +54,10 @@ const routes: Routes = [
   {
     path: 'first-page',
     loadChildren: () => import('./first-page/first-page.module').then( m => m.FirstPagePageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
   }
 
 

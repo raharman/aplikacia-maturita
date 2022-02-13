@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nastavenia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Zapnúť notifikácie</ion-label>
+    <ion-toggle (ionChange) = "onToggleNotifications($event)"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label>Zapnúť tmavý režim</ion-label>
+    <ion-toggle (ionChange) = "onToggleColorTheme($event)"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-input type="range" name="volume">Hlasitosť</ion-input>
+  </ion-item>
+</ion-content>
