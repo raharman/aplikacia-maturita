@@ -7,24 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsPage{
 
-  constructor() { }
+  darkMode: boolean = false;
 
-  onToggleColorTheme( event ){
-    if(event.detail.checked){
-      document.body.setAttribute("color-theme", "dark");
-    }
-    else{
-      document.body.setAttribute("color-theme", "light");
-    }
+  constructor() { 
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    this.darkMode = prefersDark.matches;
   }
 
-  onToggleNotifications( event ){
-    if(event.detail.checked){
-      /* zapnute notifikacie */
-    }
-    else{
-      /* vypnute notifikacie */
-    }
+
+  change(){
+    this.darkMode = !this.darkMode;
+
+    document.body.classList.toggle( 'dark' );
   }
+  
 
 }

@@ -5,13 +5,15 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
+  <!-- <ion-item>
     <ion-label>Zapnúť notifikácie</ion-label>
     <ion-toggle (ionChange) = "onToggleNotifications($event)"></ion-toggle>
-  </ion-item>
+  </ion-item> -->
   <ion-item>
     <ion-label>Zapnúť tmavý režim</ion-label>
-    <ion-toggle (ionChange) = "onToggleColorTheme($event)"></ion-toggle>
+    <ion-toggle slot = "end"
+                [ngModel]="darkMode"
+                (ionChange)="change()"></ion-toggle>
   </ion-item>
   <ion-item>
     <ion-input type="range" name="volume">Hlasitosť</ion-input>
